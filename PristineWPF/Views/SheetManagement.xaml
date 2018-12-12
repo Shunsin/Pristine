@@ -1,0 +1,232 @@
+﻿<Window x:Class="Pristine.Views.SheetManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pristine.Views"
+        mc:Ignorable="d"
+        Title="SheetManagement" Height="700" Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="StackPanel">
+                <Setter
+                    Property="Margin"
+                    Value="2"/>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter
+                    Property="Margin"
+                    Value="2"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter
+                    Property="Margin"
+                    Value="2"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter
+                    Property="Margin"
+                    Value="5,2,5,2"/>
+                <Setter
+                    Property="Padding"
+                    Value="2"/>
+                <Setter
+                    Property="Height"
+                    Value="22"/>
+                <Setter
+                    Property="Width"
+                    Value="80"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid
+        Margin="20"
+        x:Name="MainPanel">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*"/>
+            <ColumnDefinition Width=".5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*"/>
+            <RowDefinition Height=".7*"/>
+        </Grid.RowDefinitions>
+        <Grid
+            Margin="10"
+            Grid.Row="0"
+            Grid.Column="0"
+            x:Name="FabricThreadPanel">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".17*"/>
+                <RowDefinition Height=".166*"/>
+                <RowDefinition Height=".166*"/>
+                <RowDefinition Height=".166*"/>
+                <RowDefinition Height=".166*"/>
+                <RowDefinition Height=".166*"/>
+            </Grid.RowDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Grid.Row="0"
+                HorizontalAlignment="Center"
+                Text="Thread"
+                FontSize="16"
+                FontWeight="Bold"
+                TextDecorations="Underline"/>
+            <TextBlock
+                Grid.Column="0"
+                Grid.Row="1"
+                Text="Name:"/>
+            <TextBox 
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Grid.Row="1"
+                Text="{Binding Path=SelectedThread.Name}"/>
+            <TextBlock
+                Grid.Column="0"
+                Grid.Row="2"
+                Text="Retail Total:"/>
+            <TextBox 
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Grid.Row="2"
+                Text="{Binding Path=SelectedThread.RetailTotal}"/>
+            <TextBlock
+                Grid.Column="0"
+                Grid.Row="3"
+                Text="Discount:"/>
+            <CheckBox
+                Margin="5,5,2,2"
+                Grid.Column="1"
+                Grid.Row="3"
+                Content="As Percent"
+                IsChecked="{Binding Path=SelectedThread.DiscountAsPercent}"/>
+            <TextBox 
+                Grid.Column="2"
+                Grid.Row="3"
+                Text="{Binding Path=SelectedThread.Discount}"/>
+            <TextBlock
+                Grid.Column="0"
+                Grid.Row="4"
+                Text="Payment Received:"/>
+            <TextBox 
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Grid.Row="4"
+                Text="{Binding Path=SelectedThread.PaymentReceived}"/>
+            <TextBlock
+                Grid.Column="0"
+                Grid.Row="5"
+                Text="Shipping:"/>
+            <TextBox 
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Grid.Row="5"
+                Text="{Binding Path=SelectedThread.Shipping}"/>
+        </Grid>
+        <Grid
+            Margin="10"
+            Grid.Row="0"
+            Grid.Column="1"
+            x:Name="SheetPanel">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".7*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".17*"/>
+                <RowDefinition Height=".166*"/>
+                <RowDefinition Height=".196*"/>
+                <RowDefinition Height=".468*"/>
+            </Grid.RowDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="0"
+                HorizontalAlignment="Center"
+                Text="Sheet"
+                FontSize="16"
+                FontWeight="Bold"
+                TextDecorations="Underline"/>
+            <TextBlock
+                Grid.Column="0"
+                Grid.Row="1"
+                Text="Name:"/>
+            <TextBox 
+                Grid.Column="1"
+                Grid.Row="1"
+                Text="{Binding Path=ParentSheet.Name}"/>
+            <TextBlock
+                Grid.Column="0"
+                Grid.Row="2"
+                Text="Date:"/>
+            <DatePicker 
+                Margin="2"
+                Grid.Column="1"
+                Grid.Row="2"
+                SelectedDate="{Binding Path=ParentSheet.Date}"/>
+            <TextBlock
+                Grid.Column="0"
+                Grid.Row="3"
+                Text="Description:"/>
+            <TextBox 
+                Grid.Column="1"
+                Grid.Row="3"
+                TextWrapping="WrapWithOverflow"
+                Text="{Binding Path=ParentSheet.Description}"/>
+        </Grid>
+        <Grid
+            Grid.ColumnSpan="2"
+            Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".08*"/>
+                <RowDefinition Height=".84*"/>
+                <RowDefinition Height=".08*"/>
+            </Grid.RowDefinitions>
+            <DockPanel
+                Grid.Row="0">
+                <Button
+                    DockPanel.Dock="Left"
+                    Content="Add/Save"/>
+                <Button
+                    DockPanel.Dock="Left"
+                    Content="Edit Selected"/>
+                <Button
+                    DockPanel.Dock="Left"
+                    Content="Split Shipping"/>
+                <Button
+                    HorizontalAlignment="Right"
+                    DockPanel.Dock="Right"
+                    Width="100"
+                    Content="Remove Selected"/>
+            </DockPanel>
+            <DataGrid
+                Grid.Row="1"
+                ItemsSource="{Binding Path=FabricThreads}" 
+                SelectionMode="Single" 
+                SelectionUnit="FullRow" 
+                CanUserReorderColumns="True" 
+                CanUserResizeColumns="True"
+                CanUserResizeRows="False" 
+                CanUserSortColumns="True" 
+                AlternatingRowBackground="CadetBlue"/>
+            <DockPanel
+                Grid.Row="2">
+                <Button
+                    Margin="15,2,15,2"
+                    HorizontalAlignment="Right"
+                    DockPanel.Dock="Right"
+                    Content="Cancel"/>
+                <Button
+                    Margin="15,2,15,2"
+                    HorizontalAlignment="Right"
+                    DockPanel.Dock="Right"
+                    Content="Save"/>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Window>

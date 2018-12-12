@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pristine", "Pristine\Pristine.csproj", "{530154E2-0E1F-4FB6-B584-6E47841A9000}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PristineOld", "Pristine\PristineOld.csproj", "{530154E2-0E1F-4FB6-B584-6E47841A9000}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PristineTest", "PristineTest\PristineTest.csproj", "{49D1ABB3-BABF-4E65-814E-43D800C2E7EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PristineWPF", "PristineWPF\PristineWPF.csproj", "{52BF8797-32B1-4FF1-AA6B-5E85AD72D9F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{530154E2-0E1F-4FB6-B584-6E47841A9000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{530154E2-0E1F-4FB6-B584-6E47841A9000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{530154E2-0E1F-4FB6-B584-6E47841A9000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D1ABB3-BABF-4E65-814E-43D800C2E7EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D1ABB3-BABF-4E65-814E-43D800C2E7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D1ABB3-BABF-4E65-814E-43D800C2E7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D1ABB3-BABF-4E65-814E-43D800C2E7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52BF8797-32B1-4FF1-AA6B-5E85AD72D9F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52BF8797-32B1-4FF1-AA6B-5E85AD72D9F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52BF8797-32B1-4FF1-AA6B-5E85AD72D9F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52BF8797-32B1-4FF1-AA6B-5E85AD72D9F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
