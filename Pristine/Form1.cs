@@ -13,5 +13,14 @@ namespace Pristine {
         public Form1() {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            //TODO: Save Data before close
+            Close();
+        }
     }
 }
